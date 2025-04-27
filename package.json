@@ -1,0 +1,44 @@
+{
+  "name": "cursor-intellij-bridge",
+  "displayName": "Cursor到IntelliJ跳转",
+  "description": "从Cursor跳转到IntelliJ IDEA并打开当前文件",
+  "version": "1.0.0",
+  "publisher": "YourName",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cursorIntellijBridge.jumpToIntelliJ"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorIntellijBridge.jumpToIntelliJ",
+        "title": "跳转到IntelliJ IDEA"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursorIntellijBridge.jumpToIntelliJ",
+        "key": "cmd+y",
+        "mac": "cmd+y",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.4.4"
+  }
+} 
