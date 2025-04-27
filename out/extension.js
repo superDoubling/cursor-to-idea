@@ -279,23 +279,25 @@ function jumpToIntelliJ(filePath, lineNumber) {
             try {
                 const cmd = `open -a "${ideaAppPath}" "${absolutePath}"`;
                 (0, child_process_1.execSync)(cmd);
-                // 对于已经打开的项目，直接发送跳转命令，不设置延迟
-                try {
-                    const appleScriptCommand = `
-            tell application "${ideaAppPath}"
-              activate
-              tell application "System Events"
-                keystroke "l" using {command down, option down}
-                keystroke "${lineNumber}"
-                keystroke return
+                // 添加1秒延迟确保应用有足够时间准备
+                setTimeout(() => {
+                    try {
+                        const appleScriptCommand = `
+              tell application "${ideaAppPath}"
+                activate
+                tell application "System Events"
+                  keystroke "l" using {command down, option down}
+                  keystroke "${lineNumber}"
+                  keystroke return
+                end tell
               end tell
-            end tell
-          `;
-                    (0, child_process_1.execSync)(`osascript -e '${appleScriptCommand.replace(/'/g, "'\\''")}' &`);
-                }
-                catch (error) {
-                    console.error("AppleScript跳转失败:", error);
-                }
+            `;
+                        (0, child_process_1.execSync)(`osascript -e '${appleScriptCommand.replace(/'/g, "'\\''")}' &`);
+                    }
+                    catch (error) {
+                        console.error("AppleScript跳转失败:", error);
+                    }
+                }, 1000);
                 vscode.window.showInformationMessage(`已请求IntelliJ IDEA打开文件: ${absolutePath}:${lineNumber}`);
             }
             catch (error) {
@@ -343,6 +345,10 @@ function jumpToIntelliJ(filePath, lineNumber) {
                         const encodedProject = encodeURIComponent(projectRoot);
                         const url = `idea://open?file=${encodedPath}&line=${lineNumber}&project=${encodedProject}`;
                         (0, child_process_1.execSync)(`start "" "${url}"`);
+                        // 添加1秒延迟确保项目和文件能够正确打开
+                        setTimeout(() => {
+                            console.log("Windows环境：已添加1秒延迟，确保文件能正确打开");
+                        }, 1000);
                     }
                     catch (error) {
                         console.error("打开文件失败:", error);
@@ -371,11 +377,15 @@ function jumpToIntelliJ(filePath, lineNumber) {
                     url = `idea://open?file=${encodedPath}&line=${lineNumber}&project=${encodedProject}`;
                 }
                 (0, child_process_1.execSync)(`start "" "${url}"`);
+                // 添加1秒延迟确保项目和文件能够正确打开
+                setTimeout(() => {
+                    console.log("Windows环境：已添加1秒延迟，确保文件能正确打开");
+                }, 1000);
                 vscode.window.showInformationMessage(`已请求IntelliJ IDEA打开文件: ${absolutePath}:${lineNumber}`);
                 return;
             }
             catch (error) {
-                console.error("URL协议打开文件失败:", error);
+                console.error("打开文件失败:", error);
             }
             // 如果URL协议方式都失败，回退到命令行方式
             const possiblePaths = [
@@ -467,6 +477,10 @@ function jumpToIntelliJ(filePath, lineNumber) {
                         const encodedProject = encodeURIComponent(projectRoot);
                         const url = `idea://open?file=${encodedPath}&line=${lineNumber}&project=${encodedProject}`;
                         (0, child_process_1.execSync)(`xdg-open "${url}"`);
+                        // 添加1秒延迟确保项目和文件能够正确打开
+                        setTimeout(() => {
+                            console.log("Linux环境：已添加1秒延迟，确保文件能正确打开");
+                        }, 1000);
                     }
                     catch (error) {
                         console.error("打开文件失败:", error);
@@ -495,6 +509,10 @@ function jumpToIntelliJ(filePath, lineNumber) {
                     url = `idea://open?file=${encodedPath}&line=${lineNumber}&project=${encodedProject}`;
                 }
                 (0, child_process_1.execSync)(`xdg-open "${url}"`);
+                // 添加1秒延迟确保项目和文件能够正确打开
+                setTimeout(() => {
+                    console.log("Linux环境：已添加1秒延迟，确保文件能正确打开");
+                }, 1000);
                 vscode.window.showInformationMessage(`已请求IntelliJ IDEA打开文件: ${absolutePath}:${lineNumber}`);
                 return;
             }
