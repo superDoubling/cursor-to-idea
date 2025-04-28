@@ -2,7 +2,7 @@
   "name": "cursor-intellij-bridge",
   "displayName": "Cursor to IntelliJ",
   "description": "Jump from Cursor to IntelliJ IDEA and open the current file",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "ShacoZhang",
   "repository": {
     "type": "git",
