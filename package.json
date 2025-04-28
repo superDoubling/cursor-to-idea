@@ -2,7 +2,7 @@
   "name": "cursor-intellij-bridge",
   "displayName": "Cursor to IntelliJ",
   "description": "Jump from Cursor to IntelliJ IDEA and open the current file",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "ShacoZhang",
   "repository": {
     "type": "git",
@@ -36,8 +36,8 @@
     "keybindings": [
       {
         "command": "cursorIntellijBridge.jumpToIntelliJ",
-        "key": "cmd+y",
-        "mac": "cmd+y",
+        "key": "cmd+shift+y",
+        "mac": "cmd+shift+y",
         "when": "editorTextFocus"
       }
     ],

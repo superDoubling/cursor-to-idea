@@ -17,7 +17,7 @@
 ### 使用方法
 
 1. 在 Cursor 中打开一个文件
-2. 使用快捷键 `Cmd+Y` (macOS) 或 点击右键菜单中的 "跳转到IntelliJ IDEA"
+2. 使用快捷键 `Cmd+Shift+Y` (macOS) 或 点击右键菜单中的 "跳转到IntelliJ IDEA"
 3. 文件将在 IntelliJ IDEA 中打开并跳转到相同的行号
 
 ### 自定义设置
@@ -28,7 +28,7 @@
 
 ### 自定义快捷键
 
-默认快捷键是 `Cmd+Y`，您可以在 VS Code 的键盘快捷方式设置中自定义：
+默认快捷键是 `Cmd+Shift+Y`，您可以在 VS Code 的键盘快捷方式设置中自定义：
 
 1. 打开命令面板 (Cmd+Shift+P)
 2. 搜索 "Preferences: Open Keyboard Shortcuts"
@@ -56,7 +56,7 @@ This extension allows you to quickly jump from the Cursor editor to IntelliJ IDE
 ### Usage
 
 1. Open a file in Cursor
-2. Use the shortcut `Cmd+Y` (macOS) or click "Jump to IntelliJ IDEA" in the context menu
+2. Use the shortcut `Cmd+Shift+Y` (macOS) or click "Jump to IntelliJ IDEA" in the context menu
 3. The file will open in IntelliJ IDEA and jump to the same line
 
 ### Custom Settings
@@ -67,7 +67,7 @@ You can customize the following options in the settings:
 
 ### Custom Keyboard Shortcuts
 
-The default shortcut is `Cmd+Y`. You can customize it in VS Code's keyboard shortcuts settings:
+The default shortcut is `Cmd+Shift+Y`. You can customize it in VS Code's keyboard shortcuts settings:
 
 1. Open the Command Palette (Cmd+Shift+P)
 2. Search for "Preferences: Open Keyboard Shortcuts"
