@@ -1,9 +1,9 @@
 {
   "name": "cursor-intellij-bridge",
-  "displayName": "Cursor到IntelliJ跳转",
-  "description": "从Cursor跳转到IntelliJ IDEA并打开当前文件",
-  "version": "1.0.0",
-  "publisher": "Shaco Zhang",
+  "displayName": "Cursor to IntelliJ",
+  "description": "Jump from Cursor to IntelliJ IDEA and open the current file",
+  "version": "1.0.1",
+  "publisher": "ShacoZhang",
   "repository": {
     "type": "git",
     "url": "https://github.com/superDoubling/cursor-to-idea.git"
@@ -30,7 +30,7 @@
     "commands": [
       {
         "command": "cursorIntellijBridge.jumpToIntelliJ",
-        "title": "跳转到IntelliJ IDEA"
+        "title": "Jump to IntelliJ IDEA"
       }
     ],
     "keybindings": [
@@ -42,12 +42,12 @@
       }
     ],
     "configuration": {
-      "title": "Cursor到IntelliJ跳转",
+      "title": "Cursor to IntelliJ",
       "properties": {
         "cursorIntellijBridge.ideaPath": {
           "type": "string",
           "default": "",
-          "description": "IntelliJ IDEA应用程序的自定义路径"
+          "description": "Custom path to IntelliJ IDEA application"
         }
       }
     }
